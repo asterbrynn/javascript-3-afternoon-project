@@ -157,9 +157,10 @@ var myCar = {
 */
 
 
-function recordCleaner(myCar) {
-  for (myCar.accidents in myCar) {
-    for (i = 0; i < myCar.accidents.length; i++) {
+function recordCleaner() {
+  for (i = 0; i < myCar.accidents.length; i++) {
+    let atFault = myCar.accidents[i].atFaultForAccident;
+    if (atFault) {
       myCar.accidents[i].atFaultForAccident = false;
     }
   }
@@ -180,10 +181,11 @@ var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
     4. Return the modified numsArr.
 */
 
-function looper(numsArr) {
+function looper() {
   for (i = 0; i < numsArr.length; i++) {
-    for (j = 0; j <numsArr[i].length; j++) {
-      if (numsArr[i][j] % 2 === 0) {
+    for (j = 0; j < numsArr[i].length; j++) {
+      let val = numsArr[i][j];
+      if (val % 2 === 0) {
         numsArr[i][j] = "even";
       }
       else {
